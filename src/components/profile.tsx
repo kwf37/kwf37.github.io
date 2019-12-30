@@ -34,7 +34,6 @@ export default function Profile() {
       }
     }
   `);
-  console.log(data);
 
   return (
     <Card className={classes.card}>

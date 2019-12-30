@@ -35,37 +35,31 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   `);
 
   return (
-    <Container
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `0px 1.0875rem 1.45rem`,
-        paddingTop: 0,
-        paddingBottom: 0,
-      }}
-    >
+    <Stack>
       <SpinCube canvas_id="canvas" />
-      <Grid
-        container
-        spacing={1}
+      <Container
         style={{
-          position: `relative`,
-          zIndex: 2,
+          margin: `0 auto`,
+          maxWidth: 940,
+          padding: `0px 1.0875rem 1.45rem`,
+          paddingTop: 0,
+          paddingBottom: 0,
+          backgroundColor: 'rgba(255,0,255,0.8)',
         }}
       >
-        <Grid item xs={12}>
-          <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <Grid container spacing={1} style={{}}>
+          <Grid item xs={3}>
+            <Profile />
+          </Grid>
+          <Grid item xs={9}>
+            <Paper></Paper>
+            <main>{children}</main>
+          </Grid>
         </Grid>
-        <Grid item xs={3}>
-          <Profile />
-        </Grid>
-        <Grid item xs={9}>
-          <Paper></Paper>
-          <main>{children}</main>
-        </Grid>
-      </Grid>
-      <Footer />
-    </Container>
+        <Footer />
+      </Container>
+    </Stack>
   );
 };
 

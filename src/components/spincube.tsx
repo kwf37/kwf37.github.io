@@ -54,8 +54,8 @@ const SpinCube: React.FC<SpinCubeProps> = props => {
       id={props.canvas_id}
       ref={ref}
       style={{
-        position: `absolute`,
-        zIndex: 1,
+        width: '100%',
+        height: '100%',
       }}
     ></canvas>
   );
