@@ -22,10 +22,7 @@ export default function Template({
   const { frontmatter, html } = markdownRemark;
   return (
     <Layout>
-      <div
-        className="blog-post-content"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );
 }

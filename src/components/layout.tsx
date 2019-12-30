@@ -16,6 +16,8 @@ import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Profile from './profile';
 import Footer from './footer';
+import SpinCube from './spincube';
+import Stack from './stack';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -39,9 +41,18 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         maxWidth: 960,
         padding: `0px 1.0875rem 1.45rem`,
         paddingTop: 0,
+        paddingBottom: 0,
       }}
     >
-      <Grid container spacing={1}>
+      <SpinCube canvas_id="canvas" />
+      <Grid
+        container
+        spacing={1}
+        style={{
+          position: `relative`,
+          zIndex: 2,
+        }}
+      >
         <Grid item xs={12}>
           <Header siteTitle={data.site.siteMetadata.title} />
         </Grid>

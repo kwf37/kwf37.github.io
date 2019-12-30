@@ -1,14 +1,15 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import styled from 'styled-components';
+
+const NestedFooter = styled.footer({
+  background: `rebeccapurple`,
+  bottom: 0,
+});
 
 const Footer: React.FC<{}> = () => (
-  <footer
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+  <NestedFooter>
     <div
       style={{
         margin: `0 auto`,
@@ -30,7 +31,7 @@ const Footer: React.FC<{}> = () => (
         </Link>
       </p>
     </div>
-  </footer>
+  </NestedFooter>
 );
 
 export default Footer;
