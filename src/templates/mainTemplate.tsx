@@ -1,6 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
+import Backdrop from '../components/backdrop';
+import Cubes from '../components/cubes';
+import SpinCube from '../components/spincube';
 
 interface MarkdownData {
   markdownRemark: {
@@ -21,9 +24,12 @@ export default function Template({
   const { markdownRemark } = data; // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark;
   return (
-    <Layout>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
-    </Layout>
+    <Backdrop>
+      <Cubes canvas_id="canvas" />
+      <Layout>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+      </Layout>
+    </Backdrop>
   );
 }
 

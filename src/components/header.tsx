@@ -15,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({ siteTitle }) => (
   >
     <div
       style={{
-        margin: `0 auto`,
+        margin: `0 px`,
         maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
       }}

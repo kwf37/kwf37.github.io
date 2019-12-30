@@ -17,7 +17,7 @@ import Paper from '@material-ui/core/Paper';
 import Profile from './profile';
 import Footer from './footer';
 import SpinCube from './spincube';
-import Stack from './stack';
+import Backdrop from './backdrop';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -35,31 +35,34 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   `);
 
   return (
-    <Stack>
-      <SpinCube canvas_id="canvas" />
-      <Container
+    <Container
+      style={{
+        margin: `0 auto`,
+        maxWidth: 900,
+        padding: `0px `,
+        paddingTop: 0,
+        paddingBottom: 0,
+        backgroundColor: 'rgba(255,255,255,0.8)',
+      }}
+    >
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <Grid
+        container
+        spacing={1}
         style={{
-          margin: `0 auto`,
-          maxWidth: 940,
           padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-          paddingBottom: 0,
-          backgroundColor: 'rgba(255,0,255,0.8)',
         }}
       >
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <Grid container spacing={1} style={{}}>
-          <Grid item xs={3}>
-            <Profile />
-          </Grid>
-          <Grid item xs={9}>
-            <Paper></Paper>
-            <main>{children}</main>
-          </Grid>
+        <Grid item xs={3}>
+          <Profile />
         </Grid>
-        <Footer />
-      </Container>
-    </Stack>
+        <Grid item xs={9}>
+          <Paper></Paper>
+          <main>{children}</main>
+        </Grid>
+      </Grid>
+      <Footer />
+    </Container>
   );
 };
 
