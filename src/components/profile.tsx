@@ -13,7 +13,6 @@ import Img from 'gatsby-image';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import { LinkButton } from './buttons';
 
 const useStyles = makeStyles({
   card: {
