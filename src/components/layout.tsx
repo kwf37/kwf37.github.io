@@ -39,7 +39,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       style={{
         margin: `0 auto`,
         maxWidth: 900,
-        padding: `0px `,
+        padding: `20px `,
         paddingTop: 0,
         paddingBottom: 0,
         backgroundColor: 'rgba(255,255,255,0.8)',

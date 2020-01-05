@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Paper from '@material-ui/core/Paper';
 import Layout from '../components/layout';
 import Backdrop from '../components/backdrop';
 import Cubes from '../components/cubes';
@@ -23,6 +24,16 @@ export default function Template({
 }) {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark;
+  return (
+    <Layout>
+      <Paper
+        style={{
+          padding: '15px',
+        }}
+        dangerouslySetInnerHTML={{ __html: html }}
+      ></Paper>
+    </Layout>
+  );
   return (
     <Backdrop>
       <Cubes canvas_id="canvas" />
