@@ -1,8 +1,5 @@
 import React, { useEffect, createRef } from 'react';
-import styled from 'styled-components';
 import Container from '@material-ui/core/Container';
-import { number } from 'prop-types';
-import { AutoComplete } from 'material-ui';
 
 interface BackgroundProps {
   children: React.ReactNode;

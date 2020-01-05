@@ -1,29 +1,33 @@
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 
-const NestedFooter = styled.footer({
-  background: `rebeccapurple`,
-  bottom: 0,
+const useStyles = makeStyles({
+  footer: {
+    background: `rebeccapurple`,
+    bottom: 0,
+  },
 });
 
-const Footer: React.FC<{}> = () => (
-  <NestedFooter>
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <p style={{ margin: 0 }}>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </p>
-    </div>
-  </NestedFooter>
-);
+const Footer: React.FC<{}> = () => {
+  const classes = useStyles();
+  const theme = useTheme();
+  return (
+    <footer className={classes.footer}>
+      <div
+        style={{
+          margin: `0 auto`,
+          maxWidth: 960,
+          padding: `1.45rem 1.0875rem`,
+        }}
+      >
+        <p style={{ margin: 0 }}>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </p>
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;

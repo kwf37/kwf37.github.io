@@ -5,6 +5,9 @@ import Layout from '../components/layout';
 import Backdrop from '../components/backdrop';
 import Cubes from '../components/cubes';
 import SpinCube from '../components/spincube';
+import theme from '../components/theme';
+import { ThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 interface MarkdownData {
   markdownRemark: {
@@ -25,14 +28,17 @@ export default function Template({
   const { markdownRemark } = data; // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark;
   return (
-    <Layout>
-      <Paper
-        style={{
-          padding: '15px',
-        }}
-        dangerouslySetInnerHTML={{ __html: html }}
-      ></Paper>
-    </Layout>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Layout>
+        <Paper
+          style={{
+            padding: '15px',
+          }}
+          dangerouslySetInnerHTML={{ __html: html }}
+        ></Paper>
+      </Layout>
+    </ThemeProvider>
   );
   return (
     <Backdrop>

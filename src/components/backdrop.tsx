@@ -13,7 +13,6 @@ import React, {
   forwardRef,
   RefObject,
 } from 'react';
-import styled from 'styled-components';
 import Container from '@material-ui/core/Container';
 
 interface BackdropProps {

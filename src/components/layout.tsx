@@ -6,18 +6,17 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import theme from './theme';
 import Header from './header';
 import './layout.css';
+import { ThemeProvider } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Profile from './profile';
 import Footer from './footer';
-import SpinCube from './spincube';
-import Backdrop from './backdrop';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -39,7 +38,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       style={{
         margin: `0 auto`,
         maxWidth: 900,
-        padding: `20px `,
+        padding: `0px `,
         paddingTop: 0,
         paddingBottom: 0,
         backgroundColor: 'rgba(255,255,255,0.8)',
@@ -64,10 +63,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Footer />
     </Container>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export default Layout;
