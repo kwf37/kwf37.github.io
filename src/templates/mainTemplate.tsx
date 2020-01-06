@@ -3,8 +3,7 @@ import { graphql } from 'gatsby';
 import Paper from '@material-ui/core/Paper';
 import Layout from '../components/layout';
 import Backdrop from '../components/backdrop';
-import Cubes from '../components/cubes';
-import SpinCube from '../components/spincube';
+import Background from '../components/Background';
 import theme from '../components/theme';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -30,23 +29,18 @@ export default function Template({
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Layout>
-        <Paper
-          style={{
-            padding: '15px',
-          }}
-          dangerouslySetInnerHTML={{ __html: html }}
-        ></Paper>
-      </Layout>
+      <Backdrop>
+        <Background></Background>
+        <Layout>
+          <Paper
+            style={{
+              padding: '15px',
+            }}
+            dangerouslySetInnerHTML={{ __html: html }}
+          ></Paper>
+        </Layout>
+      </Backdrop>
     </ThemeProvider>
-  );
-  return (
-    <Backdrop>
-      <Cubes canvas_id="canvas" />
-      <Layout>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-      </Layout>
-    </Backdrop>
   );
 }
 

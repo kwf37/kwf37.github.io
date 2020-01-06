@@ -8,7 +8,7 @@ import {
   LensflareElement,
 } from 'three/examples/jsm/objects/Lensflare.js';
 
-type CubesProps = {};
+type BackgroundProps = {};
 
 function three(canvas: HTMLCanvasElement) {
   var scene: THREE.Scene;
@@ -115,7 +115,7 @@ function three(canvas: HTMLCanvasElement) {
   }
 }
 
-const Cubes: React.FC<CubesProps> = props => {
+const Background: React.FC<BackgroundProps> = props => {
   const [ref, _] = React.useState(React.createRef<HTMLCanvasElement>());
 
   useEffect(() => {
@@ -134,4 +134,4 @@ const Cubes: React.FC<CubesProps> = props => {
   );
 };
 
-export default Cubes;
+export default Background;

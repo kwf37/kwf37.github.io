@@ -32,12 +32,12 @@ const BackgroundContainer: FC<BackgroundProps> = forwardRef<
     <div
       ref={ref}
       style={{
-        position: 'absolute',
+        position: 'fixed',
         top: '0px',
         right: '0px',
-        height: height,
+        height: '100vh',
         zIndex: 1,
-        width: '100%',
+        width: '100vw',
         margin: '0px',
         padding: '0px',
       }}
