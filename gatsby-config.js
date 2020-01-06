@@ -36,7 +36,12 @@ module.exports = {
         path: `${__dirname}/src/markdown`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: ['gatsby-remark-component'],
+      },
+    },
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {

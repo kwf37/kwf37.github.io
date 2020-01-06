@@ -38,11 +38,11 @@ function three(canvas: HTMLCanvasElement) {
       specular: 0xffffff,
       shininess: 50,
     });
-    for (var i = 0; i < 3000; i++) {
+    for (var i = 0; i < 1000; i++) {
       var mesh = new THREE.Mesh(geometry, material);
-      mesh.position.x = 8000 * (2.0 * Math.random() - 1.0);
-      mesh.position.y = 8000 * (2.0 * Math.random() - 1.0);
-      mesh.position.z = 8000 * (2.0 * Math.random() - 1.0);
+      mesh.position.x = 4000 * (2.0 * Math.random() - 1.0);
+      mesh.position.y = 4000 * (2.0 * Math.random() - 1.0);
+      mesh.position.z = 4000 * (2.0 * Math.random() - 1.0);
       mesh.rotation.x = Math.random() * Math.PI;
       mesh.rotation.y = Math.random() * Math.PI;
       mesh.rotation.z = Math.random() * Math.PI;
@@ -59,9 +59,9 @@ function three(canvas: HTMLCanvasElement) {
     var textureLoader = new THREE.TextureLoader();
     var textureFlare0 = textureLoader.load('textures/lensflare/lensflare0.png');
     var textureFlare3 = textureLoader.load('textures/lensflare/lensflare3.png');
-    addLight(0.55, 0.9, 0.5, 5000, 0, -1000);
-    addLight(0.08, 0.8, 0.5, 0, 0, -1000);
-    addLight(0.995, 0.5, 0.9, 5000, 5000, -1000);
+    addLight(0.55, 0.9, 0.5, 2000, 0, -1000);
+    addLight(0.08, 0.8, 0.5, 0, 0, 1000);
+    addLight(0.995, 0.5, 0.9, 2000, 2000, 1000);
     function addLight(
       h: number,
       s: number,

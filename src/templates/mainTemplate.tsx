@@ -7,10 +7,15 @@ import Background from '../components/Background';
 import theme from '../components/theme';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import rehypeReact from 'rehype-react';
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+}).Compiler;
 
 interface MarkdownData {
   markdownRemark: {
-    html: string;
+    htmlAst: string;
     frontmatter: {
       date: string;
       path: string;
@@ -22,22 +27,23 @@ interface MarkdownData {
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }: {
-  data: MarkdownData;
+  data: any;
 }) {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark;
+  //const { frontmatter, htmlAst } = markdownRemark;
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Backdrop>
-        <Background></Background>
+        <Background />
         <Layout>
           <Paper
             style={{
               padding: '15px',
             }}
-            dangerouslySetInnerHTML={{ __html: html }}
-          ></Paper>
+          >
+            {renderAst(markdownRemark.htmlAst)}
+          </Paper>
         </Layout>
       </Backdrop>
     </ThemeProvider>
@@ -47,7 +53,7 @@ export default function Template({
 export const pageQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
+      htmlAst
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path
