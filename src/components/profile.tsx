@@ -11,6 +11,7 @@ import Img from 'gatsby-image';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles({
   card: {
@@ -62,6 +63,7 @@ export default function Profile() {
           </Typography>
         </CardContent>
       </CardActionArea>
+      <Divider />
       <ButtonGroup
         className={classes.buttonGroup}
         orientation="vertical"

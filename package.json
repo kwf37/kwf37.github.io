@@ -10,6 +10,7 @@
     "@material-ui/styles": "^4.7.1",
     "@types/material-ui": "^0.21.7",
     "@types/react-helmet": "^5.0.14",
+    "clsx": "^1.0.4",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-manifest": "^2.2.31",

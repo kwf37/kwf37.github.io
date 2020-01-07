@@ -6,6 +6,8 @@ title: 'About Me'
 
 # About Me
 
+---
+
 I am a senior undergraduate at Cornell University, studying Electrical Engineering and Computer Science. I am particularly interested in Programming Languages and Computer Architecture and I work in Professor Adrian Sampson's group on high-level languages for hardware design. I also love serving as a teaching assistant for courses at Cornell. Outside of the classroom, I can be found running, practicing [lion dance](https://en.wikipedia.org/wiki/Lion_dance), or boxing.
 
 ## Teaching

@@ -17,6 +17,7 @@ import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Profile from './profile';
 import Footer from './footer';
+import Divider from '@material-ui/core/Divider';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -47,7 +48,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <Grid
         container
-        spacing={1}
+        spacing={2}
         style={{
           padding: `0px 1.0875rem 1.45rem`,
         }}
